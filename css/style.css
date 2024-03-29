@@ -149,7 +149,7 @@ header .content {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../../assets/bg.jpg");
+  background-image: url("../assets/bg.jpg");
 }
 header .content-container {
   display: flex;
