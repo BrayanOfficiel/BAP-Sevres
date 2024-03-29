@@ -93,22 +93,19 @@ document.addEventListener('DOMContentLoaded', function () {
     updateContent('escale');
 });
 
-// every 3s update content but NOT RANDOMLY !!!!!! make it in order
-// let i = 0;
-// setInterval(() => {
-//     //if hover on container, stop the interval
-//     if (document.querySelector('.services-container:hover')) {
-//         return;
-//     } else {
-//         i++;
-//         if (i > 3) {
-//             i = 0;
-//         }
-//         updateContent(Object.keys(servicesDetails)[i]);
-//     }
-
-
-// }, 3000);
+let i = 0;
+setInterval(() => {
+    //if hover on container, stop the interval
+    if (document.querySelector('.services-container:hover')) {
+        return;
+    } else {
+        i++;
+        if (i > 3) {
+            i = 0;
+        }
+        updateContent(Object.keys(servicesDetails)[i]);
+    }
+}, 3000);
 
 
 // Smooth scroll vers les ancres
