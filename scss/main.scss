@@ -1,0 +1,346 @@
+@import "abstracts/variables";
+
+@import "base/reset";
+@import "base/typography";
+
+@import "components/buttons";
+@import "components/carousel";
+@import "components/cards";
+
+@import "layout/header";
+@import "layout/services";
+@import "layout/team";
+@import "layout/reviews";
+@import "layout/contact";
+@import "layout/footer";
+
+body {
+    position: relative;
+    width: 100%;
+    scroll-behavior: smooth;
+
+    font-family: $font-secondary, sans-serif;
+
+    background: white;
+    color: $primary-text;
+}
+
+.bg-top,
+.bg-bottom {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-top {
+    top: 0;
+}
+
+.bg-bottom {
+    bottom: 0;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @media screen and (max-width: 768px) {
+        padding-inline: 24px;
+    }
+
+    .title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 48px;
+        text-align: center;
+
+        @media screen and (max-width: 768px) {
+            padding-top: 24px;
+        }
+    }
+}
+
+.semi-section {
+    width: 100%;
+    height: 50vh;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-beige;
+
+    @media screen and (max-width: 860px), screen and (max-height: 660px) {
+        height: 75vh;
+        padding: 24px;
+    }
+    @media screen and (max-width: 680px), screen and (max-height: 660px) {
+        height: auto;
+        padding: 24px;
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        &-title {
+            font-family: $font-primary;
+            color: $primary-text;
+            font-size: 64px;
+            font-weight: bold;
+
+            @media screen and (max-width: 860px),
+                screen and (max-height: 660px) {
+                font-size: 32px;
+            }
+        }
+
+        &-subtitle {
+            font-family: $font-primary;
+            color: $primary-text;
+            font-size: 32px;
+            text-align: justify;
+            text-align-last: center;
+            font-weight: lighter;
+            max-width: 1000px;
+
+            @media screen and (max-width: 860px),
+                screen and (max-height: 660px) {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.municipality-services {
+    // height: 75vh;
+    height: auto;
+    padding: 64px 32px;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+
+    @media screen and (max-width: 768px) {
+        height: 100vh;
+        padding: 10px;
+    }
+
+    &-help {
+        margin-bottom: 64px;
+        font-size: 48px;
+        font-family: $font-primary;
+        font-weight: 400;
+        color: $color-primary-blue;
+        font-style: italic;
+    }
+
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        max-width: 1000px;
+        .services-header {
+            display: flex;
+            justify-content: center;
+            .services-logo {
+                border-radius: 5px 5px 0 0;
+                padding: 20px;
+                transform: scale(6px);
+                cursor: pointer;
+                box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+                background-color: $color-beige;
+                box-sizing: content-box;
+                transition: 0.3s ease-in-out;
+
+                @media screen and (max-width: 768px) {
+                    // padding: 10px 10px 0 10px;
+                    border-radius: 24px 24px 0 0;
+                }
+                img {
+                    width: 128px;
+                    border-radius: 6px;
+
+                    @media screen and (max-width: 768px) {
+                        width: 64px;
+                    }
+                }
+                &.active {
+                    background-color: white;
+                    // transform: scale(1.1);
+                    // transform-origin: bottom;
+                    // margin: 0 10px;
+                    box-sizing: content-box;
+                    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+                    clip-path: inset(-10px -10px 0px -10px);
+                    z-index: 1;
+                }
+            }
+        }
+
+        // .services-title {
+        //     color: $secondary-text;
+        //     background-color: $color-primary-blue;
+        //     // padding: 20px;
+        //     border-radius: 0 32px 0 0;
+        //     font-size: 32px;
+        //     line-height: 1.6;
+        //     font-family: $font-secondary;
+        //     z-index: 2;
+
+        //     @media screen and (max-width: 768px) {
+        //         font-size: 24px;
+        //     }
+
+        //     &.escale {
+        //         border-radius: 0 32px 0 0;
+        //     }
+
+        //     &.mediatheque {
+        //         border-radius: 32px 32px 0 0;
+        //     }
+
+        //     &.maison-famille {
+        //         border-radius: 32px 32px 0 0;
+        //     }
+
+        //     &.ccas {
+        //         border-radius: 32px 0 0 0;
+        //     }
+        // }
+
+        .services-content-box {
+            display: flex;
+            // border: 1px solid black;
+            border-radius: 12px;
+            position: relative;
+            box-shadow: 0 0px 8px rgba(0, 0, 0, 0.25);
+
+            &.reverse {
+                flex-direction: row-reverse;
+
+                .services-content {
+                    border-radius: 0 12px 12px 0;
+                }
+
+                .services-image {
+                    border-radius: 12px 0 0 12px;
+                }
+
+                .rect {
+                    left: calc(50% - 68px);
+                    rotate: 180deg;
+                }
+            }
+
+            .rect {
+                position: absolute;
+                bottom: 20px;
+                left: calc(50% - 72px);
+                width: 140px;
+            }
+
+            .services-content {
+                background-color: white;
+                padding: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 20px;
+                width: 50%;
+                border-radius: 12px 0 0 12px;
+                z-index: 1;
+                .services-body {
+                    color: $color-primary-blue;
+                    font-size: 35px;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    font-family: $font-primary;
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 16px;
+                    }
+                }
+
+                .services-contact {
+                    display: block;
+                    color: $color-primary-blue;
+                    border-radius: 0 0px 32px 32px;
+                    font-family: $font-primary;
+                    font-size: 20px;
+                    line-height: 1.6;
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 16px;
+                    }
+
+                    div {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        a {
+                            color: $color-primary-blue;
+                            font-size: 24px;
+                            line-height: 1.6;
+                            font-family: $font-primary;
+                            font-weight: 400;
+
+                            &:hover {
+                                color: darken($color-primary-blue, 10%);
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        fill: $color-primary-blue;
+                    }
+                }
+
+                .service-site {
+                    font-family: $font-primary;
+                }
+            }
+            .services-image {
+                width: 50%;
+                height: auto;
+                background-color: $color-secondary-blue;
+                border-radius: 0 12px 12px 0;
+                img {
+                    width: 100%;
+                    border-radius: 0 12px 12px 0;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+.blue {
+    color: $color-primary-blue;
+}
+
+main {
+    width: 100%;
+
+    section {
+        padding: 0 48px 0px 48px;
+    }
+}

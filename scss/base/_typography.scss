@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+$font-logo: "Playfair Display", sans-serif;
+$font-primary: "Crimson Pro", sans-serif;
+$font-secondary: "Crete Round", sans-serif;
+$font-replacement: "Arial", sans-serif;
+
+$font-size: 16px;
+
+h1 {
+    font-family: $font-logo;
+    font-size: calc($font-size * 4.5);
+    line-height: 80px;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+        font-size: 64px;
+        line-height: 64px;
+    }
+    @media screen and (max-width: 576px) {
+        font-size: 48px;
+    }
+}
+
+h2 {
+    font-family: $font-primary;
+    font-size: calc($font-size * 3);
+    line-height: 60px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+
+h3 {
+    font-family: $font-primary;
+    font-size: calc($font-size * 2);
+
+    @media screen and (max-width: 768px) {
+        font-size: calc(font-size * 1.5);
+    }
+}
+
+h4 {
+    font-family: $font-secondary;
+    font-size: calc($font-size * 1.25);
+}
+
+h5 {
+    font-family: $font-secondary;
+    font-size: calc($font-size * 2);
+    line-height: 60px;
+}
+
+p {
+    font-family: $font-secondary;
+    font-size: calc($font-size * 1);
+    line-height: 20px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+a {
+    font-family: $font-secondary;
+    font-size: calc($font-size * 0.625);
+    color: $font-secondary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+    @media screen and (max-width: 768px) {
+        font-family: $font-replacement;
+    }
+}

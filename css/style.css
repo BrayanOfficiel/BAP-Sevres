@@ -1,0 +1,551 @@
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+h1 {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 72px;
+  line-height: 80px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 64px;
+    line-height: 64px;
+  }
+}
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-family: "Crimson Pro", sans-serif;
+  font-size: 48px;
+  line-height: 60px;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+h3 {
+  font-family: "Crimson Pro", sans-serif;
+  font-size: 32px;
+}
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: calc(font-size * 1.5);
+  }
+}
+
+h4 {
+  font-family: "Crete Round", sans-serif;
+  font-size: 20px;
+}
+
+h5 {
+  font-family: "Crete Round", sans-serif;
+  font-size: 32px;
+  line-height: 60px;
+}
+
+p {
+  font-family: "Crete Round", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+@media screen and (max-width: 768px) {
+  p {
+    font-size: 12px;
+  }
+}
+
+a {
+  font-family: "Crete Round", sans-serif;
+  font-size: 10px;
+  color: "Crete Round", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  a {
+    font-family: "Arial", sans-serif;
+  }
+}
+
+.button {
+  width: fit-content;
+  background-color: rgb(38, 58, 138);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button:hover {
+  background-color: #1b2962;
+}
+
+header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  padding: 24px;
+  background-color: rgb(38, 58, 138);
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+header .nav-logo {
+  height: 50%;
+  left: 24px;
+  max-height: 100px;
+  justify-self: start;
+  position: absolute;
+}
+@media screen and (max-width: 576px) {
+  header .nav-logo {
+    height: 30%;
+  }
+}
+header .nav-title {
+  align-items: center;
+  font-family: "Playfair Display", sans-serif;
+  justify-self: center;
+  font-size: 3em;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 0;
+}
+@media screen and (max-width: 576px) {
+  header .nav-title {
+    font-size: 2em;
+  }
+}
+header .content {
+  width: 100%;
+  height: calc(100vh - 100px);
+  padding-inline: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/assets/bg.jpg");
+}
+header .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 50px;
+}
+header .content-container-arrow {
+  position: absolute;
+  width: 30px;
+  bottom: 40px;
+  left: calc(50% - 15px);
+  rotate: -90deg;
+  animation: float 1s infinite;
+  filter: drop-shadow(-1px 0 5px black);
+}
+@keyframes float {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+header .content-container-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+header .content-container-main-title {
+  font-family: "Playfair Display", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 96px;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgb(51, 55, 67);
+  text-align: center;
+}
+@media screen and (max-width: 753px) {
+  header .content-container-main-title {
+    font-size: 12vw;
+  }
+}
+header .content-container-main-subtitle {
+  font-family: "Playfair Display", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgb(51, 55, 67);
+  text-align: center;
+}
+@media screen and (max-width: 576px) {
+  header .content-container-main-subtitle {
+    font-size: 24px;
+  }
+}
+header .content-container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+header .content-container-form-search {
+  align-self: start;
+  justify-self: start;
+  min-width: 350px;
+  width: 20vw;
+  max-width: 900px;
+  height: 30px;
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.5em;
+  text-align: left;
+  color: rgb(38, 58, 138);
+  font-family: "Crimson Pro", sans-serif;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(12.3px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease-in-out;
+  transform: scale(0.99);
+}
+header .content-container-form-search:hover, header .content-container-form-search:active, header .content-container-form-search:focus {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: scale(1.01);
+}
+header .content-container-form-search:active, header .content-container-form-search:focus {
+  width: 40vw;
+}
+header .content-container-form-search::placeholder {
+  color: rgb(38, 58, 138);
+  font-family: "Crimson Pro", sans-serif;
+}
+header .content-container-form-search::content {
+  color: rgb(38, 58, 138);
+  font-family: "Crimson Pro", sans-serif;
+}
+@media screen and (max-width: 576px) {
+  header .content {
+    padding: 5vw;
+  }
+}
+
+body {
+  position: relative;
+  width: 100%;
+  scroll-behavior: smooth;
+  font-family: "Crete Round", sans-serif, sans-serif;
+  background: white;
+  color: rgb(0, 0, 0);
+}
+
+.bg-top,
+.bg-bottom {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-top {
+  top: 0;
+}
+
+.bg-bottom {
+  bottom: 0;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (max-width: 768px) {
+  section {
+    padding-inline: 24px;
+  }
+}
+section .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 48px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  section .title {
+    padding-top: 24px;
+  }
+}
+
+.semi-section {
+  width: 100%;
+  height: 50vh;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(237, 233, 231);
+}
+@media screen and (max-width: 860px), screen and (max-height: 660px) {
+  .semi-section {
+    height: 75vh;
+    padding: 24px;
+  }
+}
+@media screen and (max-width: 680px), screen and (max-height: 660px) {
+  .semi-section {
+    height: auto;
+    padding: 24px;
+  }
+}
+.semi-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.semi-section-container-title {
+  font-family: "Crimson Pro", sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 64px;
+  font-weight: bold;
+}
+@media screen and (max-width: 860px), screen and (max-height: 660px) {
+  .semi-section-container-title {
+    font-size: 32px;
+  }
+}
+.semi-section-container-subtitle {
+  font-family: "Crimson Pro", sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+  text-align: justify;
+  text-align-last: center;
+  font-weight: lighter;
+  max-width: 1000px;
+}
+@media screen and (max-width: 860px), screen and (max-height: 660px) {
+  .semi-section-container-subtitle {
+    font-size: 24px;
+  }
+}
+
+.municipality-services {
+  height: auto;
+  padding: 64px 32px;
+  border-radius: 8px;
+  font-family: "Arial", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .municipality-services {
+    height: 100vh;
+    padding: 10px;
+  }
+}
+.municipality-services-help {
+  margin-bottom: 64px;
+  font-size: 48px;
+  font-family: "Crimson Pro", sans-serif;
+  font-weight: 400;
+  color: rgb(38, 58, 138);
+  font-style: italic;
+}
+.municipality-services .services-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 1000px;
+}
+.municipality-services .services-container .services-header {
+  display: flex;
+  justify-content: center;
+}
+.municipality-services .services-container .services-header .services-logo {
+  border-radius: 5px 5px 0 0;
+  padding: 20px;
+  transform: scale(6px);
+  cursor: pointer;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgb(237, 233, 231);
+  box-sizing: content-box;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .municipality-services .services-container .services-header .services-logo {
+    border-radius: 24px 24px 0 0;
+  }
+}
+.municipality-services .services-container .services-header .services-logo img {
+  width: 128px;
+  border-radius: 6px;
+}
+@media screen and (max-width: 768px) {
+  .municipality-services .services-container .services-header .services-logo img {
+    width: 64px;
+  }
+}
+.municipality-services .services-container .services-header .services-logo.active {
+  background-color: white;
+  box-sizing: content-box;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  clip-path: inset(-10px -10px 0px -10px);
+  z-index: 1;
+}
+.municipality-services .services-container .services-content-box {
+  display: flex;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.25);
+}
+.municipality-services .services-container .services-content-box.reverse {
+  flex-direction: row-reverse;
+}
+.municipality-services .services-container .services-content-box.reverse .services-content {
+  border-radius: 0 12px 12px 0;
+}
+.municipality-services .services-container .services-content-box.reverse .services-image {
+  border-radius: 12px 0 0 12px;
+}
+.municipality-services .services-container .services-content-box.reverse .rect {
+  left: calc(50% - 68px);
+  rotate: 180deg;
+}
+.municipality-services .services-container .services-content-box .rect {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 72px);
+  width: 140px;
+}
+.municipality-services .services-container .services-content-box .services-content {
+  background-color: white;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  width: 50%;
+  border-radius: 12px 0 0 12px;
+  z-index: 1;
+}
+.municipality-services .services-container .services-content-box .services-content .services-body {
+  color: rgb(38, 58, 138);
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: "Crimson Pro", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .municipality-services .services-container .services-content-box .services-content .services-body {
+    font-size: 16px;
+  }
+}
+.municipality-services .services-container .services-content-box .services-content .services-contact {
+  display: block;
+  color: rgb(38, 58, 138);
+  border-radius: 0 0px 32px 32px;
+  font-family: "Crimson Pro", sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+}
+@media screen and (max-width: 768px) {
+  .municipality-services .services-container .services-content-box .services-content .services-contact {
+    font-size: 16px;
+  }
+}
+.municipality-services .services-container .services-content-box .services-content .services-contact div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.municipality-services .services-container .services-content-box .services-content .services-contact div a {
+  color: rgb(38, 58, 138);
+  font-size: 24px;
+  line-height: 1.6;
+  font-family: "Crimson Pro", sans-serif;
+  font-weight: 400;
+}
+.municipality-services .services-container .services-content-box .services-content .services-contact div a:hover {
+  color: #1b2962;
+  text-decoration: underline;
+}
+.municipality-services .services-container .services-content-box .services-content .services-contact img {
+  width: 24px;
+  height: 24px;
+  fill: rgb(38, 58, 138);
+}
+.municipality-services .services-container .services-content-box .services-content .service-site {
+  font-family: "Crimson Pro", sans-serif;
+}
+.municipality-services .services-container .services-content-box .services-image {
+  width: 50%;
+  height: auto;
+  background-color: rgb(100, 119, 193);
+  border-radius: 0 12px 12px 0;
+}
+.municipality-services .services-container .services-content-box .services-image img {
+  width: 100%;
+  border-radius: 0 12px 12px 0;
+  object-fit: contain;
+}
+
+.blue {
+  color: rgb(38, 58, 138);
+}
+
+main {
+  width: 100%;
+}
+main section {
+  padding: 0 48px 0px 48px;
+}
+
+/*# sourceMappingURL=style.css.map */

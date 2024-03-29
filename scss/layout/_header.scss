@@ -1,0 +1,209 @@
+header {
+    .nav {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        height: 100px;
+        padding: 24px;
+
+        background-color: $color-primary-blue;
+        color: $secondary-text;
+
+        position: relative;
+
+        &-logo {
+            height: 50%;
+            left: 24px;
+            max-height: 100px;
+            justify-self: start;
+            position: absolute;
+
+            @media screen and (max-width: 576px) {
+                height: 30%;
+            }
+        }
+
+        &-title {
+            align-items: center;
+            font-family: $font-logo;
+            justify-self: center;
+            font-size: 3em;
+            font-weight: bold;
+            text-decoration: none;
+            color: $secondary-text;
+            padding: 0;
+
+            @media screen and (max-width: 576px) {
+                font-size: 2em;
+            }
+        }
+    }
+
+    .content {
+        width: 100%;
+        height: calc(100vh - 100px);
+        padding-inline: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url("/assets/bg.jpg");
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            // mask: radial-gradient(
+            //     closest-side,
+            //     rgba(0, 0, 0, 1) 50%,
+            //     rgba(0, 0, 0, 0.8) 70%,
+            //     rgba(0, 0, 0, 0) 100%
+            // );
+
+            gap: 20px;
+
+            border-radius: 50px;
+
+            // backdrop-filter: blur(6px);
+            // -webkit-backdrop-filter: blur(6px);
+
+            &-arrow {
+                position: absolute;
+                width: 30px;
+                bottom: 40px;
+                left: calc(50% - 15px);
+                rotate: -90deg;
+                animation: float 1s infinite;
+                filter: drop-shadow(-1px 0 5px black);
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateX(0);
+                }
+                50% {
+                    transform: translateX(15px);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+            &-main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                &-title {
+                    font-family: $font-logo;
+                    color: $secondary-text;
+                    font-size: 96px;
+                    font-weight: bold;
+                    text-shadow: 0 0 15px $color-dark-grey;
+                    text-align: center;
+
+                    @media screen and (max-width: 753px) {
+                        font-size: 12vw;
+                    }
+                }
+
+                &-subtitle {
+                    font-family: $font-logo;
+                    color: $secondary-text;
+                    font-size: 40px;
+                    font-weight: bold;
+                    text-shadow: 0 0 15px $color-dark-grey;
+                    text-align: center;
+
+                    @media screen and (max-width: 576px) {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            &-form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                // &-label {
+                //     font-family: $font-primary;
+                //     padding: 10px 20px;
+                //     color: $secondary-text;
+                //     font-size: 1.5em;
+                //     font-weight: bold;
+                //     text-shadow: 0 0 15px $color-dark-grey;
+                //     align-self: start;
+
+                //     background: rgba(255, 255, 255, 0.5);
+                //     border-radius: 50px;
+                //     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                //     backdrop-filter: blur(10px);
+                //     -webkit-backdrop-filter: blur(12.3px);
+                //     border: 1px solid rgba(255, 255, 255, 0.3);
+                // }
+
+                &-search {
+                    align-self: start;
+                    justify-self: start;
+                    min-width: 350px;
+                    width: 20vw;
+                    max-width: 900px;
+                    height: 30px;
+                    padding: 20px;
+                    border: none;
+                    border-radius: 50px;
+                    font-size: 1.5em;
+                    text-align: left;
+                    color: $color-primary-blue;
+                    font-family: $font-primary;
+                    background: rgba(255, 255, 255, 0.5);
+                    border-radius: 50px;
+                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(12.3px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: 0.3s ease-in-out;
+                    transform: scale(0.99);
+                }
+
+                &-search:hover,
+                &-search:active,
+                &-search:focus {
+                    background: rgba(255, 255, 255, 0.75);
+                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                    backdrop-filter: blur(20px);
+                    -webkit-backdrop-filter: blur(20px);
+                    transform: scale(1.01);
+                }
+
+                &-search:active,
+                &-search:focus {
+                    width: 40vw;
+                }
+
+                &-search::placeholder {
+                    color: $color-primary-blue;
+                    font-family: $font-primary;
+                }
+
+                &-search::content {
+                    color: $color-primary-blue;
+                    font-family: $font-primary;
+                }
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            padding: 5vw;
+        }
+    }
+}
