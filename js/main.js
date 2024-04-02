@@ -6,7 +6,7 @@ const serviceSite = document.getElementById('service-site');
 const serviceLogos = document.querySelectorAll('.services-logo');
 const serviceImage = document.querySelector('.services-image');
 
-// Informations fictives pour chaque service
+// Détails des services
 const servicesDetails = {
     'escale': {
         title: "L'Esc@le",
@@ -70,9 +70,8 @@ function updateContent(service) {
     }
 }
 
-
+// Attache des écouteurs d'événements à chaque logo
 document.addEventListener('DOMContentLoaded', function () {
-    // Attache des écouteurs d'événements à chaque logo
     document.getElementById('escale-logo').addEventListener('click', function () {
         updateContent('escale');
     });
@@ -93,9 +92,10 @@ document.addEventListener('DOMContentLoaded', function () {
     updateContent('escale');
 });
 
+
+// Défilement automatique des services toutes les 3 secondes
 let i = 0;
 setInterval(() => {
-    //if hover on container, stop the interval
     if (document.querySelector('.services-container:hover')) {
         return;
     } else {

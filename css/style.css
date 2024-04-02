@@ -384,26 +384,35 @@ section .title {
   padding: 64px 32px;
   border-radius: 8px;
   font-family: "Arial", sans-serif;
+  min-height: fit-content;
 }
 @media screen and (max-width: 768px) {
   .municipality-services {
-    height: 100vh;
     padding: 10px;
   }
 }
 .municipality-services-help {
+  text-align: left;
   margin-bottom: 64px;
   font-size: 48px;
   font-family: "Crimson Pro", sans-serif;
   font-weight: 400;
   color: rgb(38, 58, 138);
   font-style: italic;
+  line-height: 1;
+}
+@media screen and (max-width: 768px) {
+  .municipality-services-help {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
 }
 .municipality-services .services-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   max-width: 1000px;
+  height: min-content;
 }
 .municipality-services .services-container .services-header {
   display: flex;
@@ -412,7 +421,6 @@ section .title {
 .municipality-services .services-container .services-header .services-logo {
   border-radius: 5px 5px 0 0;
   padding: 20px;
-  transform: scale(6px);
   cursor: pointer;
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
   background-color: rgb(237, 233, 231);
@@ -421,7 +429,7 @@ section .title {
 }
 @media screen and (max-width: 768px) {
   .municipality-services .services-container .services-header .services-logo {
-    border-radius: 24px 24px 0 0;
+    padding: 10px;
   }
 }
 .municipality-services .services-container .services-header .services-logo img {
@@ -430,7 +438,7 @@ section .title {
 }
 @media screen and (max-width: 768px) {
   .municipality-services .services-container .services-header .services-logo img {
-    width: 64px;
+    width: 16vw;
   }
 }
 .municipality-services .services-container .services-header .services-logo.active {
@@ -459,11 +467,22 @@ section .title {
   left: calc(50% - 68px);
   rotate: 180deg;
 }
+@media screen and (max-width: 768px) {
+  .municipality-services .services-container .services-content-box.reverse .rect {
+    left: calc(50% - 31px);
+  }
+}
 .municipality-services .services-container .services-content-box .rect {
   position: absolute;
   bottom: 20px;
   left: calc(50% - 72px);
   width: 140px;
+}
+@media screen and (max-width: 768px) {
+  .municipality-services .services-container .services-content-box .rect {
+    width: 60px;
+    left: calc(50% - 31px);
+  }
 }
 .municipality-services .services-container .services-content-box .services-content {
   background-color: white;
@@ -473,8 +492,13 @@ section .title {
   justify-content: space-between;
   gap: 20px;
   width: 50%;
-  border-radius: 12px 0 0 12px;
+  border-radius: 12px;
   z-index: 1;
+}
+@media screen and (max-width: 768px) {
+  .municipality-services .services-container .services-content-box .services-content {
+    padding: 20px;
+  }
 }
 .municipality-services .services-container .services-content-box .services-content .services-body {
   color: rgb(38, 58, 138);
@@ -489,12 +513,14 @@ section .title {
   }
 }
 .municipality-services .services-container .services-content-box .services-content .services-contact {
-  display: block;
+  display: flex;
+  flex-direction: column;
   color: rgb(38, 58, 138);
   border-radius: 0 0px 32px 32px;
   font-family: "Crimson Pro", sans-serif;
   font-size: 20px;
   line-height: 1.6;
+  gap: 10px;
 }
 @media screen and (max-width: 768px) {
   .municipality-services .services-container .services-content-box .services-content .services-contact {
@@ -503,7 +529,7 @@ section .title {
 }
 .municipality-services .services-container .services-content-box .services-content .services-contact div {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 10px;
 }
 .municipality-services .services-container .services-content-box .services-content .services-contact div a {
@@ -517,24 +543,30 @@ section .title {
   color: #1b2962;
   text-decoration: underline;
 }
+@media screen and (max-width: 768px) {
+  .municipality-services .services-container .services-content-box .services-content .services-contact div a {
+    font-size: 16px;
+  }
+}
 .municipality-services .services-container .services-content-box .services-content .services-contact img {
   width: 24px;
-  height: 24px;
   fill: rgb(38, 58, 138);
 }
 .municipality-services .services-container .services-content-box .services-content .service-site {
   font-family: "Crimson Pro", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .municipality-services .services-container .services-content-box .services-content .service-site {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
 }
 .municipality-services .services-container .services-content-box .services-image {
   width: 50%;
   height: auto;
   background-color: rgb(100, 119, 193);
   border-radius: 0 12px 12px 0;
-}
-.municipality-services .services-container .services-content-box .services-image img {
-  width: 100%;
-  border-radius: 0 12px 12px 0;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .blue {

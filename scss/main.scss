@@ -134,19 +134,26 @@ section {
     padding: 64px 32px;
     border-radius: 8px;
     font-family: "Arial", sans-serif;
+    min-height: fit-content;
 
     @media screen and (max-width: 768px) {
-        height: 100vh;
         padding: 10px;
     }
 
     &-help {
+        text-align: left;
         margin-bottom: 64px;
         font-size: 48px;
         font-family: $font-primary;
         font-weight: 400;
         color: $color-primary-blue;
         font-style: italic;
+        line-height: 1;
+
+        @media screen and (max-width: 768px) {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
     }
 
     .services-container {
@@ -154,13 +161,13 @@ section {
         flex-direction: column;
         justify-content: space-evenly;
         max-width: 1000px;
+        height: min-content;
         .services-header {
             display: flex;
             justify-content: center;
             .services-logo {
                 border-radius: 5px 5px 0 0;
                 padding: 20px;
-                transform: scale(6px);
                 cursor: pointer;
                 box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
                 background-color: $color-beige;
@@ -168,15 +175,15 @@ section {
                 transition: 0.3s ease-in-out;
 
                 @media screen and (max-width: 768px) {
-                    // padding: 10px 10px 0 10px;
-                    border-radius: 24px 24px 0 0;
+                    padding: 10px;
                 }
+
                 img {
                     width: 128px;
                     border-radius: 6px;
 
                     @media screen and (max-width: 768px) {
-                        width: 64px;
+                        width: 16vw;
                     }
                 }
                 &.active {
@@ -244,6 +251,10 @@ section {
                 .rect {
                     left: calc(50% - 68px);
                     rotate: 180deg;
+
+                    @media screen and (max-width: 768px) {
+                        left: calc(50% - 31px);
+                    }
                 }
             }
 
@@ -252,6 +263,11 @@ section {
                 bottom: 20px;
                 left: calc(50% - 72px);
                 width: 140px;
+
+                @media screen and (max-width: 768px) {
+                    width: 60px;
+                    left: calc(50% - 31px);
+                }
             }
 
             .services-content {
@@ -261,9 +277,14 @@ section {
                 flex-direction: column;
                 justify-content: space-between;
                 gap: 20px;
+                // width: 100%;
                 width: 50%;
-                border-radius: 12px 0 0 12px;
+                border-radius: 12px;
                 z-index: 1;
+
+                @media screen and (max-width: 768px) {
+                    padding: 20px;
+                }
                 .services-body {
                     color: $color-primary-blue;
                     font-size: 35px;
@@ -277,12 +298,14 @@ section {
                 }
 
                 .services-contact {
-                    display: block;
+                    display: flex;
+                    flex-direction: column;
                     color: $color-primary-blue;
                     border-radius: 0 0px 32px 32px;
                     font-family: $font-primary;
                     font-size: 20px;
                     line-height: 1.6;
+                    gap: 10px;
 
                     @media screen and (max-width: 768px) {
                         font-size: 16px;
@@ -290,7 +313,7 @@ section {
 
                     div {
                         display: flex;
-                        align-items: center;
+                        align-items: start;
                         gap: 10px;
 
                         a {
@@ -304,31 +327,50 @@ section {
                                 color: darken($color-primary-blue, 10%);
                                 text-decoration: underline;
                             }
+
+                            @media screen and (max-width: 768px) {
+                                font-size: 16px;
+                            }
                         }
                     }
 
                     img {
                         width: 24px;
-                        height: 24px;
                         fill: $color-primary-blue;
                     }
                 }
 
                 .service-site {
                     font-family: $font-primary;
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 16px;
+                        padding: 10px 15px;
+                    }
                 }
             }
             .services-image {
+                // display: none;
                 width: 50%;
                 height: auto;
                 background-color: $color-secondary-blue;
                 border-radius: 0 12px 12px 0;
-                img {
-                    width: 100%;
-                    border-radius: 0 12px 12px 0;
-                    object-fit: contain;
-                }
+                object-fit: cover;
             }
+
+            // @media screen and (max-width: 768px) {
+            //     flex-direction: column !important;
+            //     .services-content {
+            //         width: 100%;
+            //         padding: 20px;
+            //         border-radius: 12px 12px 0 0;
+            //     }
+
+            // .services-image {
+            //     width: 100%;
+            //     border-radius: 0 0 12px 12px;
+            // }
+            // }
         }
     }
 }
