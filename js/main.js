@@ -20,7 +20,7 @@ const servicesDetails = {
         title: "L'Esc@le",
         content: "Explorez le monde numérique avec L'esc@le, lieu dédié aux 12 à 30 ans. Des formations spécialisées sur la sécurité numérique et un accompagnement pour vos démarches administratives en ligne vous attendent !",
         tel: "01 41 14 12 20",
-        adresse: "7 Sent. Brezin, 92310 Sèvres",
+        adresse: "51 Grande Rue, 92310 Sèvres",
         lien: "https://maps.app.goo.gl/wd69jPMewWUSAwJY8",
         site: "https://www.sevres.fr/lescale",
         horaires: {
@@ -69,7 +69,7 @@ const servicesDetails = {
     },
     'ccas': {
         title: "Centre Communal d’Action Sociale",
-        content: "Le CCAS de Sèvres vous accompagne dans le monde numérique. Ses formations adaptées aux personnes en situation de handicap, son soutien financier pour l'accès à Internet et ses services en ligne simplifiés sont conçus pour aider toute personne en difficulté.",
+        content: "Le CCAS de Sèvres vous accompagne dans le monde numérique. Ses formations adaptées aux personnes en situation de précarité numérique, son soutien financier pour l'accès à Internet et ses services en ligne simplifiés sont conçus pour aider toute personne en difficulté.",
         tel: "01 46 21 81 45",
         adresse: "14 rue des Caves du roi, 92310 Sèvres",
         lien: "https://maps.app.goo.gl/NxCXmmys5wkULzKF9",
@@ -130,6 +130,26 @@ function updateContent(service) {
     }
     else {
         document.getElementById('services-content-box').classList.add('reverse');
+    }
+
+    if (service === 'escale') {
+        document.getElementById('services-image').classList.add('escale');
+        document.getElementById('services-image').classList.remove('mediatheque', 'mf', 'ccas');
+    }
+
+    if (service === 'mediatheque') {
+        document.getElementById('services-image').classList.add('mediatheque');
+        document.getElementById('services-image').classList.remove('escale', 'mf', 'ccas');
+    }
+
+    if (service === 'maison-famille') {
+        document.getElementById('services-image').classList.add('mf');
+        document.getElementById('services-image').classList.remove('escale', 'mediatheque', 'ccas');
+    }
+
+    if (service === 'ccas') {
+        document.getElementById('services-image').classList.add('ccas');
+        document.getElementById('services-image').classList.remove('escale', 'mediatheque', 'mf');
     }
 }
 

@@ -416,7 +416,7 @@ section .title {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  max-width: 1000px;
+  max-width: 1200px;
   height: min-content;
 }
 .municipality-services .services-container .services-header {
@@ -458,6 +458,7 @@ section .title {
   border-radius: 12px;
   position: relative;
   box-shadow: 0 0px 8px rgba(0, 0, 0, 0.25);
+  max-height: 700px;
 }
 .municipality-services .services-container .services-content-box.reverse {
   flex-direction: row-reverse;
@@ -494,7 +495,7 @@ section .title {
   padding: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: end;
   gap: 20px;
   width: 50%;
   border-radius: 12px;
@@ -511,10 +512,11 @@ section .title {
   font-weight: 500;
   line-height: 1.2;
   font-family: "Crimson Pro", sans-serif;
+  flex: 1;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .municipality-services .services-container .services-content-box .services-content .services-body {
-    font-size: 16px;
+    font-size: 24px;
   }
 }
 .municipality-services .services-container .services-content-box .services-content .services-contact {
@@ -573,7 +575,19 @@ section .title {
   border-radius: 0 12px 12px 0;
   object-fit: cover;
 }
-@media screen and (max-width: 480px) {
+.municipality-services .services-container .services-content-box .ccas {
+  background: linear-gradient(45deg, rgba(255, 242, 0, 0.7) 20%, rgba(184, 175, 1, 0.7) 70%), url(https://grainy-gradients.vercel.app/noise.svg);
+}
+.municipality-services .services-container .services-content-box .mediatheque {
+  background: linear-gradient(190deg, rgba(124, 185, 119, 0.7) 20%, rgba(2, 158, 36, 0.7) 70%), url(https://grainy-gradients.vercel.app/noise.svg);
+}
+.municipality-services .services-container .services-content-box .mf {
+  background: linear-gradient(190deg, rgba(66, 162, 191, 0.7) 20%, rgba(34, 46, 107, 0.7) 70%), url(https://grainy-gradients.vercel.app/noise.svg);
+}
+.municipality-services .services-container .services-content-box .escale {
+  background: linear-gradient(-45deg, rgba(243, 155, 137, 0.7) 20%, rgba(151, 82, 68, 0.7) 70%), url(https://grainy-gradients.vercel.app/noise.svg);
+}
+@media screen and (max-width: 768px) {
   .municipality-services .services-container .services-content-box {
     flex-direction: column !important;
   }
