@@ -573,6 +573,19 @@ section .title {
   border-radius: 0 12px 12px 0;
   object-fit: cover;
 }
+@media screen and (max-width: 480px) {
+  .municipality-services .services-container .services-content-box {
+    flex-direction: column !important;
+  }
+  .municipality-services .services-container .services-content-box .services-content {
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .municipality-services .services-container .services-content-box .services-image {
+    display: none;
+  }
+}
 .municipality-services table.horaires {
   border-collapse: collapse;
   border-radius: 0 0 8px 8px;
@@ -616,6 +629,7 @@ section .title {
 @media screen and (max-width: 1000px) {
   .municipality-services table.horaires td {
     padding: 2px 3px;
+    border-width: 1px;
   }
 }
 .municipality-services table.horaires td.ferme {

@@ -12,6 +12,7 @@ const jeudi = document.getElementById('jeudi');
 const vendredi = document.getElementById('vendredi');
 const samedi = document.getElementById('samedi');
 const dimanche = document.getElementById('dimanche');
+let carouselClicked = false;
 
 // Détails des services
 const servicesDetails = {
@@ -136,18 +137,22 @@ function updateContent(service) {
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('escale-logo').addEventListener('click', function () {
         updateContent('escale');
+        carouselClicked = true;
     });
 
     document.getElementById('mediatheque-logo').addEventListener('click', function () {
         updateContent('mediatheque');
+        carouselClicked = true;
     });
 
     document.getElementById('maison-famille-logo').addEventListener('click', function () {
         updateContent('maison-famille');
+        carouselClicked = true;
     });
 
     document.getElementById('ccas-logo').addEventListener('click', function () {
         updateContent('ccas');
+        carouselClicked = true;
     });
 
     // Définir le contenu initial et la classe active
@@ -158,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Défilement automatique des services toutes les 3 secondes
 let i = 0;
 setInterval(() => {
-    if (document.querySelector('.services-container:hover')) {
+    if (document.querySelector('.services-container:hover') || carouselClicked === true) {
         return;
     } else {
         i++;

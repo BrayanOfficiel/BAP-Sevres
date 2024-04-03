@@ -373,19 +373,18 @@ section {
                 object-fit: cover;
             }
 
-            // @media screen and (max-width: 768px) {
-            //     flex-direction: column !important;
-            //     .services-content {
-            //         width: 100%;
-            //         padding: 20px;
-            //         border-radius: 12px 12px 0 0;
-            //     }
+            @media screen and (max-width: 480px) {
+                flex-direction: column !important;
+                .services-content {
+                    width: 100%;
+                    padding: 20px;
+                    border-radius: 12px;
+                }
 
-            // .services-image {
-            //     width: 100%;
-            //     border-radius: 0 0 12px 12px;
-            // }
-            // }
+                .services-image {
+                    display: none;
+                }
+            }
         }
     }
 
@@ -430,6 +429,7 @@ section {
 
             @media screen and (max-width: 1000px) {
                 padding: 2px 3px;
+                border-width: 1px;
             }
         }
 
