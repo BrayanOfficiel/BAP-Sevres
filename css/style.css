@@ -70,21 +70,9 @@ p {
 }
 
 a {
-  font-family: "Crete Round", sans-serif;
+  font-family: "Crimson Pro", sans-serif;
   font-size: 10px;
   color: "Crete Round", sans-serif;
-}
-
-@media screen and (max-width: 768px) {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  p,
-  a {
-    font-family: "Arial", sans-serif;
-  }
 }
 
 .button {
@@ -334,6 +322,19 @@ section .title {
   align-items: center;
   background-color: rgb(237, 233, 231);
 }
+.semi-section .abs_bg_1 {
+  position: absolute;
+  top: 2vw;
+  left: 4vw;
+  width: 10vw;
+  rotate: -15deg;
+  z-index: 0;
+}
+@media screen and (max-width: 768px) {
+  .semi-section .abs_bg_1 {
+    display: none;
+  }
+}
 @media screen and (max-width: 860px), screen and (max-height: 660px) {
   .semi-section {
     height: 75vh;
@@ -352,16 +353,18 @@ section .title {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  z-index: 1;
 }
 .semi-section-container-title {
   font-family: "Crimson Pro", sans-serif;
   color: rgb(0, 0, 0);
   font-size: 64px;
   font-weight: bold;
+  margin-bottom: 12px;
 }
-@media screen and (max-width: 860px), screen and (max-height: 660px) {
+@media screen and (max-width: 860px) {
   .semi-section-container-title {
-    font-size: 32px;
+    font-size: 36px;
   }
 }
 .semi-section-container-subtitle {
@@ -372,10 +375,11 @@ section .title {
   text-align-last: center;
   font-weight: lighter;
   max-width: 1000px;
+  margin-bottom: 12px;
 }
-@media screen and (max-width: 860px), screen and (max-height: 660px) {
+@media screen and (max-width: 860px) {
   .semi-section-container-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -400,6 +404,7 @@ section .title {
   color: rgb(38, 58, 138);
   font-style: italic;
   line-height: 1;
+  padding: 14px;
 }
 @media screen and (max-width: 768px) {
   .municipality-services-help {
@@ -469,7 +474,7 @@ section .title {
 }
 @media screen and (max-width: 768px) {
   .municipality-services .services-container .services-content-box.reverse .rect {
-    left: calc(50% - 31px);
+    left: calc(50% - 29px);
   }
 }
 .municipality-services .services-container .services-content-box .rect {
@@ -481,7 +486,7 @@ section .title {
 @media screen and (max-width: 768px) {
   .municipality-services .services-container .services-content-box .rect {
     width: 60px;
-    left: calc(50% - 31px);
+    left: calc(50% - 32px);
   }
 }
 .municipality-services .services-container .services-content-box .services-content {
@@ -567,6 +572,54 @@ section .title {
   background-color: rgb(100, 119, 193);
   border-radius: 0 12px 12px 0;
   object-fit: cover;
+}
+.municipality-services table.horaires {
+  border-collapse: collapse;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Crimson Pro", sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: rgb(38, 58, 138);
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.25);
+  max-width: 950px;
+}
+@media screen and (max-width: 1000px) {
+  .municipality-services table.horaires {
+    font-size: 2.4vw;
+  }
+}
+.municipality-services table.horaires th {
+  background-color: rgb(38, 58, 138);
+  color: white;
+  font-weight: 500;
+  padding: 5px 10px;
+  text-align: center;
+}
+@media screen and (max-width: 1000px) {
+  .municipality-services table.horaires th {
+    padding: 2px 3px;
+  }
+}
+.municipality-services table.horaires td {
+  padding: 8px 10px;
+  text-align: center;
+  border-top: 0;
+  border-left: 2px;
+  border-right: 2px;
+  border-bottom: 0px;
+  border-color: rgb(237, 233, 231);
+  border-style: solid;
+}
+@media screen and (max-width: 1000px) {
+  .municipality-services table.horaires td {
+    padding: 2px 3px;
+  }
+}
+.municipality-services table.horaires td.ferme {
+  background-color: rgb(237, 233, 231);
 }
 
 .blue {

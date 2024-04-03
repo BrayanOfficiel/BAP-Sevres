@@ -5,40 +5,83 @@ const serviceAdresse = document.getElementById('service-adresse');
 const serviceSite = document.getElementById('service-site');
 const serviceLogos = document.querySelectorAll('.services-logo');
 const serviceImage = document.querySelector('.services-image');
+const lundi = document.getElementById('lundi');
+const mardi = document.getElementById('mardi');
+const mercredi = document.getElementById('mercredi');
+const jeudi = document.getElementById('jeudi');
+const vendredi = document.getElementById('vendredi');
+const samedi = document.getElementById('samedi');
+const dimanche = document.getElementById('dimanche');
 
 // Détails des services
 const servicesDetails = {
     'escale': {
         title: "L'Esc@le",
-        content: "L'Escale est un lieu d’aide pour les jeunes sur le développement numérique au sein de la ville de Sèvres.",
+        content: "Explorez le monde numérique avec L'esc@le, lieu dédié aux 12 à 30 ans. Des formations spécialisées sur la sécurité numérique et un accompagnement pour vos démarches administratives en ligne vous attendent !",
         tel: "01 41 14 12 20",
         adresse: "7 Sent. Brezin, 92310 Sèvres",
         lien: "https://maps.app.goo.gl/wd69jPMewWUSAwJY8",
-        site: "https://www.sevres.fr/lescale"
+        site: "https://www.sevres.fr/lescale",
+        horaires: {
+            "Lundi": "Fermé",
+            "Mardi": "14h - 18h30",
+            "Mercredi": "10h - 12h30 | 14h - 18h30",
+            "Jeudi": "14h - 18h30",
+            "Vendredi": "14h - 18h30",
+            "Samedi": "10h - 14h",
+            "Dimanche": "Fermé"
+        }
     },
     'mediatheque': {
         title: "Médiathèque de Sèvres",
-        content: "La médiathèque de Sèvres s'engage dans le numérique en offrant un accès à des ressources en ligne, des ateliers sur les nouvelles technologies, et en intégrant des espaces numériques pour répondre aux besoins contemporains des utilisateurs.",
+        content: "Découvrez notre espace en ligne regroupant ressources culturelles et éducatives. Profitez d'ateliers sur les dernières technologies et de l'accès à Internet pour tous. Pour les amateurs de lecture et les passionnés de technologie, qu'ils soient petits ou grands.",
         tel: "01 41 14 12 13",
         adresse: "8 Rue de ville d'Avray, 92310 Sèvres",
         lien: "https://maps.app.goo.gl/rJWsF3CqCrWh9zms6",
-        site: "https://mediatheque.sevres.fr/"
+        site: "https://mediatheque.sevres.fr/",
+        horaires: {
+            "Lundi": "Fermé",
+            "Mardi": "14h - 19h30",
+            "Mercredi": "10h - 18h30",
+            "Jeudi": "14h - 19h30",
+            "Vendredi": "14h - 18h30",
+            "Samedi": "10h - 18h30",
+            "Dimanche": "Fermé"
+        }
     },
     'maison-famille': {
-        title: "La Maison de la Famille",
-        content: "En plus de sa structure initiale, la maison de la famille offrira aux Sévriens une structure comprenant Sèvres services, similaire au dispositif France service, afin de désengorger les structures des démarches administratives liées à la reconnaissance des droits.",
+        title: "Maison de la Famille",
+        content: "Explorez un soutien familial adapté à vos besoins, même dans le monde numérique. Des conseils en ligne sur les démarches administratives, des ateliers sur l'utilisation responsable d'Internet pour les enfants et nos solutions numériques pour simplifier votre quotidien !",
         tel: "01 45 07 21 38",
         adresse: "64 Rue des Binelles, 92310 Sèvres",
         lien: "https://maps.app.goo.gl/AYiT82Lmm1BvdeBU7",
-        site: "https://www.maisondelafamille-sevres.org/"
+        site: "https://www.maisondelafamille-sevres.org/",
+        horaires: {
+            "Lundi": "14h - 19h",
+            "Mardi": "10h - 13h | 13h30 - 19h",
+            "Mercredi": "10h - 13h | 13h30 - 19h",
+            "Jeudi": "10h - 13h | 13h30 - 20h",
+            "Vendredi": "10h - 13h | 13h30 - 18h",
+            "Samedi": "10h - 12h",
+            "Dimanche": "Fermé"
+        }
     },
     'ccas': {
         title: "Centre Communal d’Action Sociale",
-        content: "Le Centre Communal d'Action Publique de Sèvres s'adapte au numérique en facilitant l'accès en ligne à ses services et surtout en mettant en place des formations d'utilisation numérique adaptées aux personnes en situation de handicap.",
+        content: "Le CCAS de Sèvres vous accompagne dans le monde numérique. Ses formations adaptées aux personnes en situation de handicap, son soutien financier pour l'accès à Internet et ses services en ligne simplifiés sont conçus pour aider toute personne en difficulté.",
         tel: "01 46 21 81 45",
         adresse: "14 rue des Caves du roi, 92310 Sèvres",
         lien: "https://maps.app.goo.gl/NxCXmmys5wkULzKF9",
-        site: "https://www.sevres.fr/services/direction-de-la-cohesion-sociale-et-du-ccas/"
+        site: "https://www.sevres.fr/services/direction-de-la-cohesion-sociale-et-du-ccas/",
+        horaires: {
+            "Lundi": "13h - 17h30",
+            "Mardi": "9h - 12h30 | 13h30 - 17h30",
+            "Mercredi": "9h - 12h30 | 13h30 - 17h30",
+            "Jeudi": "12h30 - 17h30",
+            "Vendredi": "9h - 12h30 | 13h30 - 17h30",
+            "Samedi": "Fermé",
+            "Dimanche": "Fermé"
+        }
     }
 };
 
@@ -53,6 +96,25 @@ function updateContent(service) {
     serviceAdresse.href = servicesDetails[service].lien;
     serviceImage.src = `assets/brands/bg/${service}.png`;
     serviceSite.href = servicesDetails[service].site;
+
+    // Met à jour les horaires
+    lundi.innerHTML = servicesDetails[service].horaires["Lundi"].replace('|', '<br>');
+    mardi.innerHTML = servicesDetails[service].horaires["Mardi"].replace('|', '<br>');
+    mercredi.innerHTML = servicesDetails[service].horaires["Mercredi"].replace('|', '<br>');
+    jeudi.innerHTML = servicesDetails[service].horaires["Jeudi"].replace('|', '<br>');
+    vendredi.innerHTML = servicesDetails[service].horaires["Vendredi"].replace('|', '<br>');
+    samedi.innerHTML = servicesDetails[service].horaires["Samedi"].replace('|', '<br>');
+    dimanche.innerHTML = servicesDetails[service].horaires["Dimanche"].replace('|', '<br>');
+
+    //Si foreach fermé on ajoute la classe .ferme
+    let jours = [lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche];
+    jours.forEach(jour => {
+        if (jour.textContent === "Fermé") {
+            jour.classList.add('ferme');
+        } else {
+            jour.classList.remove('ferme');
+        }
+    });
 
     // Gère la classe active
     serviceLogos.forEach(logo => {

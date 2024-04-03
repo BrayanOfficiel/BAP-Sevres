@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 $font-logo: "Playfair Display", sans-serif;
 $font-primary: "Crimson Pro", sans-serif;
@@ -64,19 +64,7 @@ p {
 }
 
 a {
-    font-family: $font-secondary;
+    font-family: $font-primary;
     font-size: calc($font-size * 0.625);
     color: $font-secondary;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-a {
-    @media screen and (max-width: 768px) {
-        font-family: $font-replacement;
-    }
 }
