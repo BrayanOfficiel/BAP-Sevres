@@ -514,7 +514,17 @@ section .title {
   font-family: "Crimson Pro", sans-serif;
   flex: 1;
 }
+@media screen and (max-width: 1200px) {
+  .municipality-services .services-container .services-content-box .services-content .services-body {
+    font-size: 32px;
+  }
+}
 @media screen and (max-width: 1000px) {
+  .municipality-services .services-container .services-content-box .services-content .services-body {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 820px) {
   .municipality-services .services-container .services-content-box .services-content .services-body {
     font-size: 24px;
   }

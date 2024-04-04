@@ -309,7 +309,15 @@ section {
                     font-family: $font-primary;
                     flex: 1;
 
+                    @media screen and (max-width: 1200px) {
+                        font-size: 32px;
+                    }
+
                     @media screen and (max-width: 1000px) {
+                        font-size: 26px;
+                    }
+
+                    @media screen and (max-width: 820px) {
                         font-size: 24px;
                     }
                 }
